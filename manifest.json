@@ -1,0 +1,27 @@
+{
+    "name": "Multi Account Turn-in Button Fixer",
+    "version": "0.0.0.1",
+    "description": "Redirects to the correct account when clicked on 'TURN IN' button in Google Docs. Designed for users using a shared computer.",
+    "permissions": [
+        "storage",
+        "webRequest",
+        "webRequestBlocking",
+        "https://classroom.google.com/*"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://classroom.google.com/u/*/h"
+            ],
+            "js": [
+                "classesContentScript.js"
+            ]
+        }
+    ],
+    "manifest_version": 2
+}
